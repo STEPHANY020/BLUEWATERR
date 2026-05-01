@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUE WATER - Control Empresarial Premium</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CHART -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- =========================
+         SIDEBAR PREMIUM
+    ========================== -->
+    <aside class="sidebar">
+
+        <div class="logo-section">
+            <h1>BLUE WATER</h1>
+            <p>Control Empresarial Premium</p>
+        </div>
+
+        <nav>
+
+            <button onclick="showSection('dashboard')">
+                <i class="fas fa-chart-line"></i> Panel Principal
+            </button>
+
+            <button onclick="showSection('routes')">
+                <i class="fas fa-route"></i> Rutas
+            </button>
+
+            <button onclick="showSection('bottles')">
+                <i class="fas fa-wine-bottle"></i> Botellas
+            </button>
+
+            <button onclick="showSection('seals')">
+                <i class="fas fa-stamp"></i> Sellos
+            </button>
+
+            <button onclick="showSection('caps')">
+                <i class="fas fa-circle"></i> Tapas
+            </button>
+
+            <button onclick="showSection('labels')">
+                <i class="fas fa-tags"></i> Etiquetas
+            </button>
+
+            <button onclick="showSection('fuel')">
+                <i class="fas fa-gas-pump"></i> Combustibles
+            </button>
+
+            <button onclick="showSection('maintenance')">
+                <i class="fas fa-truck"></i> Mantenimiento
+            </button>
+
+            <button onclick="showSection('machinery')">
+                <i class="fas fa-industry"></i> Maquinaria
+            </button>
+
+            <button onclick="showSection('tires')">
+                <i class="fas fa-circle-notch"></i> Llantas
+            </button>
+
+            <button onclick="showSection('staff')">
+                <i class="fas fa-users"></i> Personal
+            </button>
+
+            <button onclick="generateGeneralPDF()">
+                <i class="fas fa-file-pdf"></i> PDF General
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <h2 id="sectionTitle">
+                Panel Principal
+            </h2>
+
+            <div class="date-display" id="currentDate"></div>
+
+        </header>
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+        <section id="dashboard" class="content-section active">
+
+            <!-- TARJETAS -->
+            <div class="cards-grid">
+
+                <div class="info-card">
+                    <i class="fas fa-route"></i>
+                    <h3>Rutas</h3>
+                    <p id="routesTotal">0</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-wine-bottle"></i>
+                    <h3>Botellas</h3>
+                    <p id="bottlesTotal">0</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-stamp"></i>
+                    <h3>Sellos</h3>
+                    <p id="sealsTotal">0</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-circle"></i>
+                    <h3>Tapas</h3>
+                    <p id="capsTotal">0</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-tags"></i>
+                    <h3>Etiquetas</h3>
+                    <p id="labelsTotal">0</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-gas-pump"></i>
+                    <h3>Combustibles</h3>
+                    <p id="fuelTotal">$0</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Mantenimiento</h3>
+                    <p id="maintenanceTotal">0</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Maquinaria</h3>
+                    <p id="machineryTotal">0</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-circle-notch"></i>
+                    <h3>Llantas</h3>
+                    <p id="tiresTotal">0</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Personal</h3>
+                    <p id="staffTotal">0</p>
+                </div>
+
+            </div>
+
+
+            <!-- GRAFICO PRINCIPAL -->
+            <div class="chart-card">
+
+                <h3>Coordinación General Empresarial</h3>
+
+                <canvas id="mainChart"></canvas>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
